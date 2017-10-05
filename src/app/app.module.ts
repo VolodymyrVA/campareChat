@@ -10,6 +10,16 @@ import { DataProvider } from '../providers/data/data';
 import {IonicStorageModule} from "@ionic/storage";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {Keyboard} from "@ionic-native/keyboard";
+import firebase from 'firebase';
+
+firebase.initializeApp({
+  apiKey: "AIzaSyDqcJp4Hxmh5_OPuLTu4fKvRDT3qREl_RE",
+  authDomain: "camper-chat-da59b.firebaseapp.com",
+  databaseURL: "https://camper-chat-da59b.firebaseio.com",
+  projectId: "camper-chat-da59b",
+  storageBucket: "camper-chat-da59b.appspot.com",
+  messagingSenderId: "878635736365"
+});
 
 @NgModule({
   declarations: [

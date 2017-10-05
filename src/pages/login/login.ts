@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AlertController, IonicPage, MenuController, NavController, Platform} from 'ionic-angular';
 import {DataProvider} from "../../providers/data/data";
+import firebase from "firebase";
 
 @IonicPage()
 @Component({
@@ -20,7 +21,16 @@ export class LoginPage {
   }
   
   login(): void {
-  
+    let provider = new firebase.auth.FacebookAuthProvider();
+    
+    firebase.auth().signInWithRedirect(provider).then(() => {
+      alert('signInWithRedirect')
+      firebase.auth().getRedirectResult().then((result) => {
+        alert(JSON.stringify(result));
+      }).catch((err) => {
+        alert(JSON.stringify(err));
+      })
+    })
   }
   
   getProfile(): void {
