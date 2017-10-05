@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {IonicPage} from 'ionic-angular';
+import {DataProvider} from "../../providers/data/data";
 
 @IonicPage()
 @Component({
@@ -7,9 +8,15 @@ import {IonicPage, NavController} from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  chatMessage: string = '';
+  messages: any = [];
+  
+  constructor(public dataProvider: DataProvider) {
 
-  constructor(public navCtrl: NavController) {
-
+  }
+  
+  sendMessage(): void {
+  
   }
 
 }
